@@ -1,10 +1,12 @@
 import React from 'react'
 import { assets }from '../assets/assets'
+import { gsap } from "gsap";
 
 
 const Navbar = () => {
   return (
     <div className="absolute top-0 left-0 w-full z-10 ">
+      {/* desktop menu/Main navigation */}
       <div
         className="flex justify-between items-center container
       mx-auto px-6 py-4 md:px-20 lg:px-32 bg-transparent"
