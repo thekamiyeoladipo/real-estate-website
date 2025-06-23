@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { assets }from '../assets/assets'
 import { gsap } from "gsap";
+import { useEffect } from 'react';
 
 
 const Navbar = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  useEffect(() => {
+    if(showMobileMenu){
+      document.body.style.overflow = 'hidden';
+    }else{
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    }
+  }, [showMobileMenu]);
+
   return (
     <div className="absolute top-0 left-0 w-full z-10 ">
       {/* desktop menu/Main navigation */}
@@ -29,19 +42,20 @@ const Navbar = () => {
         <button className="hidden md:block bg-white px-4 py-2 rounded-md">
           Sign Up
         </button>
-        <img className="md:hidden w-7 h-7" src={assets.menu_icon} alt="" />
+        <img onClick={() => setShowMobileMenu(true)} className="cursor-pointer md:hidden w-7 h-7" src={assets.menu_icon} alt="" />
       </div>
       {/*  mobile menu */}
-      <div className="
-      md:hidden fixed top-0 left-0 bottom-0 
-      overflow-hidden  w-full h-screen bg-white 
-      transition-all duration-300">
-        <div>
-          <img src={assets.cross_icon} alt="" />
+      <div className={`
+      ${showMobileMenu ? 'fixed w-full' : 'h-0 w-0'}
+      md:hidden top-0 left-0 bottom-0 
+      overflow-hidden h-screen bg-white 
+      transition-all duration-300`}>
+        <div className='flex justify-end cursor-pointer p-6'>
+          <img onClick={() => setShowMobileMenu(false)} src={assets.cross_icon} className='w-6' alt="" />
         </div>
        
         <ul className="flex flex-col items-center justify-center h-full">
-          <a
+          <a onClick={() => setShowMobileMenu(false)}
             href="#Header"
             className="
           px-4 py-2 rounded-full inline-block
@@ -49,7 +63,7 @@ const Navbar = () => {
           >
             Home
           </a>
-          <a
+          <a onClick={() => setShowMobileMenu(false)}
             href="#About"
             className="
           px-4 py-2 rounded-full inline-block
@@ -57,7 +71,7 @@ const Navbar = () => {
           >
             About
           </a>
-          <a
+          <a onClick={() => setShowMobileMenu(false)}
             href="#Projects"
             className="
           px-4 py-2 rounded-full inline-block
@@ -65,7 +79,7 @@ const Navbar = () => {
           >
             Projects
           </a>
-          <a
+          <a onClick={() => setShowMobileMenu(false)}
             href="#Testimonials"
             className="
           px-4 py-2 rounded-full inline-block
@@ -74,6 +88,7 @@ const Navbar = () => {
             Testimonials
           </a>
         </ul>
+        
       </div>
     </div>
   );
