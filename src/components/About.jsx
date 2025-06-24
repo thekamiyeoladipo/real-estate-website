@@ -18,11 +18,35 @@ const About = () => {
             <div className='flex flex-col items-center md:items-start mt-10 text-gray-600'>
                 <div className="grid grid-cols-2 gap-6 md:gap-10 w-full 2xl:pr-28">
                     <div>
-                        <p>10+</p>
+                        <p className='text-3xl font-medium text-gray-800'>10+</p>
                         <p>Years of Excellence</p>
+                    </div>
+                    <div>
+                        <p className='text-3xl font-medium text-gray-800'>12+</p>
+                        <p>Projects completed</p>
+                    </div>
+                    <div>
+                        <p className='text-3xl font-medium text-gray-800'>20+</p>
+                        <p>Mn. Sq. Ft. Delivered</p>
+                    </div>
+                    <div>
+                        <p className='text-3xl font-medium text-gray-800'>25+</p>
+                        <p>Ongoing Projects</p>
                     </div>
 
                 </div>
+
+                <p className='my-10 max-w-lg'>
+                    Lorem ipsum, the image used for the water and the
+                    bicycle cannot bear the burden of the thief that stole
+                    the excellence.
+                </p>
+                <button className="bg-blue-600 text-white px-8
+                py-2 rounded">
+                    Learn more
+                </button>
+
+
 
             </div>
         </div>
