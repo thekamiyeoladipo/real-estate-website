@@ -8,7 +8,9 @@ const About = () => {
      overflow-hidden'>
         <h1 className='sm:text-4xl text-2xl font-bold mb-2'>About <span className='underline underline-offset-4 decoration-1
             under font-light'>Our brand</span></h1>
-        <p className='text-center text-gray-500 mb-8 max-w-80'>Passionate about properties, Dedicated to your vision</p>
+        <p className='text-center text-gray-500 mb-8 max-w-80'>
+            Passionate about properties, Dedicated to your vision
+        </p>
 
         <div className='flex flex-col md:flex-row items-center
         md:items-start md:gap-20'>
