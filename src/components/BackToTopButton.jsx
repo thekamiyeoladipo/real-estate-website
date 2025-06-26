@@ -26,13 +26,12 @@ useEffect(() => {
 
   return (
     <div>
-        isVisible && (
 <button onClick={scrollToTop}
 className='z-50 fixed bottom-6 right-6 bg-black text-white p-3 rounded shadow-lg transition-opacity duration-300 ease-in-out'
 aria-label='Back to Top'>
      ↑
 </button>
-        )
+        
     </div>
   );
 };
