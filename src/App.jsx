@@ -10,6 +10,7 @@ const App = () => {
     <Header />
     <About />
     <Projects />
+    <BackToTopButton />
    </div>
   )
 }
