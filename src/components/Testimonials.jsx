@@ -28,13 +28,14 @@ const Testimonials = () => {
       <div key={index} className="max-w-[340px] border shadow-lg
       text-center rounded px-8 py-12">
         <img className='w-20 h-20 rounded-full mx-auto mb-4' src={testimonial.image} alt={testimonial.alt} />
-        <h2 className='text-lg font-semibold mb-2'>{testimonial.name}</h2>
-        <p className='text-gray-600 mb-4'>{testimonial.title}</p>
-        <div>
+        <h2 className='font-medium text-lg text-gray-700 mb-2'>{testimonial.name}</h2>
+        <p className='text-gray-600 mb-4 text-sm'>{testimonial.title}</p>
+        <div className='flex justify-center mb-4 gap-1 text-red-500'>
           {Array.from({ length: testimonial.rating }, (item, index) => 
             <img key={index} src={assets.star_icon} alt="Star" className='inline-block w-5 h-5' />
           )}
         </div>
+        <p className='text-gray-600'>{testimonial.text}</p>
       </div>
      ))}
       </div>

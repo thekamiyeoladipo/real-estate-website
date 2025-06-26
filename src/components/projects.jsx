@@ -74,7 +74,7 @@ const prevProject = () => {
         <div className='absolute bottom-5 left-0 right-0 justify-center'>
           <div className="inline-block bg-white w-3/4 px-4 py-2 shadow-md">
            <h2 className='text-xl font-semibold text-gray-800'>{project.title}</h2>
-           <p>{project.price}<span> | </span>
+           <p>{project.price}<span className='p-x-1'> | </span>
            {project.location}
            </p>
           </div>
