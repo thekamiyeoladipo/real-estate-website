@@ -2,6 +2,17 @@ import React, { useState } from 'react'
 import { assets, projectsData }from '../assets/assets'
 
 const Projects = () => {
+const [currentIndex, setCurrentIndex] = useState(0);
+const [cardsToShow, setCardsToShow] = useState(1);
+
+// Function to handle next project
+const nextProject = () => {
+  setCurrentIndex((prevIndex) => (prevIndex + 1) % projectsData.length);
+}
+const prevProject = () => {
+  setCurrentIndex((prevIndex) => prevIndex === 0 ? projectsData.length - 1 : prevIndex - 1);
+}
+
   return (
     <div
       id="Projects"
@@ -28,17 +39,18 @@ const Projects = () => {
       </p>
       {/* slider buttons */}
       <div className='flex justify-end items-center mb-8'>
-        <button className='p-3 bg-gray-200 rounded mr-2' aria-label='Previous Project'>
+        <button onClick={prevProject} className='p-3 bg-gray-200 rounded mr-2' aria-label='Previous Project'>
           <img src={assets.left_arrow} alt="Previous" />
         </button>
-        <button className='p-3 bg-gray-200 rounded mr-2' aria-label='Next Project'>
+        <button onClick={nextProject} className='p-3 bg-gray-200 rounded mr-2' aria-label='Next Project'>
           <img src={assets.right_arrow} alt="Next" />
         </button>
       </div>
 
       {/* Projects Slider Container */}
       <div className='overflow-hidden'>
-    <div className='flex gap-4 transition-transform duration-300 ease-in-out'>
+    <div className='flex gap-4 transition-transform duration-300 ease-in-out'
+    style={{ transform: `translateX(-${currentIndex * (100 / cardsToShow)}%)` }}>
      {projectsData.map((project, index) => (
       <div key={index} className="relative flex-shrink-0 w-full sm:w-1/4 mb-8">
         <img src={project.image} alt={project.title} className='w-full h-auto mb-14' />
@@ -57,6 +69,6 @@ const Projects = () => {
 
     </div>
   );
-}
 
+}
 export default Projects
