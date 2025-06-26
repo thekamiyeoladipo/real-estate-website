@@ -17,6 +17,7 @@ const scrollToTop = () => {
         top: 0,
         behavior: 'smooth'
     });
+    
 }
 
 useEffect(() => {
