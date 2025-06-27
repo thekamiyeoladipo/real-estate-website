@@ -9,7 +9,7 @@ const Footer = () => {
     overflow-hidden'>
       <div className='container mx-auto flex flex-col md:flex-row
       justify-between items-center'>
-        
+
         <div className='w-full md:w-1/3 mb-8 md:mb-0'>
           <img src={assets.logo_dark} alt="" />
           <p className='text-gray-400 mt-4'>
@@ -53,7 +53,14 @@ const Footer = () => {
         </div>
 
         </div>
+        
       </div>
+      <div className='mt-10 border-t border-gray-800 pt-6 text-center'>
+            <p className='text-gray-500 text-sm mt-8'>
+                &copy; {new Date().getFullYear()} Real Estate Company. All rights reserved.
+            </p>
+           
+        </div>
     </div>
   );
 }
