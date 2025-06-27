@@ -9,6 +9,7 @@ const Footer = () => {
     overflow-hidden'>
       <div className='container mx-auto flex flex-col md:flex-row
       justify-between items-center'>
+        
         <div className='w-full md:w-1/3 mb-8 md:mb-0'>
           <img src={assets.logo_dark} alt="" />
           <p className='text-gray-400 mt-4'>
@@ -18,6 +19,7 @@ const Footer = () => {
             aliquip ex ea commodo consequat.
           </p>
         </div>
+
         <div className='w-full md:w-1/5 mb-8 md:mb-0' >
             <h2 className='text-white text-lg font-semibold mb-4'>Company</h2>
             <ul className='text-gray-400'>
@@ -28,6 +30,7 @@ const Footer = () => {
                 <li className='mb-2'><a href="#Contact">Contact Us</a></li>
             </ul>
         </div>
+
         <div className='w-full md:w-1/3'>
         <h3 className='text-white text-lg font-bold mb-4'>Subscribe to Our Newsletter</h3>
         <p className='text-gray-400 mb-4 max-w-80'>
